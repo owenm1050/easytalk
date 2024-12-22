@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyTalk - Your Drunk Friend</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+  <div class="app-container">
+    <!-- Side Menu -->
+    <nav class="side-menu">
+      <div class="brand">
+        <i class="fas fa-glass-cheers"></i>
+        <span>EasyTalk</span>
+      </div>
+
+      <div class="menu-items">
+        <a href="#" class="menu-item active" data-category="all">
+          <i class="fas fa-infinity"></i>
+          <span>Both Categories</span>
+        </a>
+        <a href="#" class="menu-item" data-category="messages">
+          <i class="fas fa-comment"></i>
+          <span>Messages</span>
+        </a>
+        <a href="#" class="menu-item" data-category="excuses">
+          <i class="fas fa-person-running"></i>
+          <span>Excuses</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <button class="btn btn-primary btn-large new-text-btn" id="newTextBtn">
+          <i class="fas fa-plus"></i>
+          Add New Text
+        </button>
+      </header>
+
+      <div class="text-grid" id="textGrid">
+        <!-- Text cards will be added here by JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Add New Text Modal -->
+  <div class="modal" id="newTextModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add New Text</h2>
+        <button class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <select id="textCategory" class="category-select">
+            <option value="messages">Message</option>
+            <option value="excuses">Excuse</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="textContent" placeholder="Type your text here..." rows="4"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="cancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
